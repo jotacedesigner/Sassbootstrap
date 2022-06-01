@@ -12,7 +12,7 @@ const files = {
     scssPath:'./scss/**/*.scss',
     jsPath:'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 };
-//HTML
+//HTML Task
 function htmlTask(){
     return src(files.htmlPath)
     //.pipe(htmlmin({ collapseWhitespac : true}))
@@ -43,6 +43,7 @@ function browserSyncServe(done){
             baseDir: './',
         },
     });
+    //Reload HTML when change 
     watch('*.html').on('change', browsersync.reload);
     done();
 };
@@ -51,7 +52,6 @@ function browserSyncReload(done){
     browsersync.reload();
     done();
 };
-
 
 //Ejecutando comando
 exports.default =series(
