@@ -52,7 +52,6 @@ function browserSyncReload(done){
     browsersync.reload();
     done();
 };
-
 //Ejecutando comando
 exports.default =series(
     parallel (scssTask, jsTask,htmlTask),
