@@ -52,7 +52,7 @@ function browserSyncReload(done){
     browsersync.reload();
     done();
 };
-//Ejecutando comando
+//Run command
 exports.default =series(
     parallel (scssTask, jsTask,htmlTask),
     browserSyncServe,
