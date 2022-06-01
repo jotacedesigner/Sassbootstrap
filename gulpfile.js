@@ -1,0 +1,61 @@
+//Inicializando modulos
+const {src, dest, watch, series, parallel } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const postcss = require('postcss');
+const autoprefixer = require ('autoprefixer');
+const GulpClient = require('gulp');
+const browsersync = require ('browser-sync').create();
+
+//Copy file JS a to folder proyect
+const files = {
+    htmlPath: './*.html',
+    scssPath:'./scss/**/*.scss',
+    jsPath:'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+};
+//HTML
+function htmlTask(){
+    return src(files.htmlPath)
+    //.pipe(htmlmin({ collapseWhitespac : true}))
+    .pipe(dest('./'));
+};
+//Creando el servidor y los archivos que se compilaran
+function scssTask(){
+    return src(files.scssPath)
+    .pipe (sass().on('Error',sass.logError))
+    .pipe(dest('./assets/css'))
+};
+exports.scssTask = scssTask;
+
+//Copiando el js del modulo de boostrap
+function jsTask (){
+    return src(files.jsPath)
+    .pipe(dest('assets/js'))
+};
+exports.jsTask = jsTask;
+//Watch task:SCSS and JS Files for changes
+function watchTask(){
+    watch(files.scssPath, parallel(scssTask, browserSyncReload));
+}
+//Server browserSyncServe
+function browserSyncServe(done){
+    browsersync.init({
+        server:{
+            baseDir: './',
+        },
+    });
+    watch('*.html').on('change', browsersync.reload);
+    done();
+};
+//Reload Server
+function browserSyncReload(done){
+    browsersync.reload();
+    done();
+};
+
+
+//Ejecutando comando
+exports.default =series(
+    parallel (scssTask, jsTask,htmlTask),
+    browserSyncServe,
+    watchTask
+);
