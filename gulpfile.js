@@ -33,7 +33,7 @@ function jsTask (){
     .pipe(dest('assets/js'))
 };
 exports.jsTask = jsTask;
-// //Reduce file css not use bootstrap
+// Reduce file css not use bootstrap
 // function purgecssTask() {
 //     return src('assets/**/*.css')
 //         .pipe(purgecss({
