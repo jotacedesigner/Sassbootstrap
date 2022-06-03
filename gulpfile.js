@@ -4,6 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 const postcss = require('postcss');
 const autoprefixer = require ('autoprefixer');
 const GulpClient = require('gulp');
+const purgecss = require('gulp-purgecss');
 const browsersync = require ('browser-sync').create();
 
 //Copy file JS a to folder proyect
@@ -32,6 +33,15 @@ function jsTask (){
     .pipe(dest('assets/js'))
 };
 exports.jsTask = jsTask;
+// //Reduce file css not use bootstrap
+// function purgecssTask() {
+//     return src('assets/**/*.css')
+//         .pipe(purgecss({
+//             content: ['*.html']
+//         }))
+//         .pipe(dest('assets/css'))
+// };
+// exports.purgecssTask = purgecssTask;
 //Watch task:SCSS and JS Files for changes
 function watchTask(){
     watch(files.scssPath, parallel(scssTask, browserSyncReload));
