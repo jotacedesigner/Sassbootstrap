@@ -1,7 +1,7 @@
 //Inicializando modulos
 const {src, dest, watch, series, parallel } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const postcss = require('postcss');
+const rename = require('gulp-rename');
 const autoprefixer = require ('autoprefixer');
 const GulpClient = require('gulp');
 const purgecss = require('gulp-purgecss');
@@ -34,14 +34,15 @@ function jsTask (){
 };
 exports.jsTask = jsTask;
 // Reduce file css not use bootstrap
-// function purgecssTask() {
-//     return src('assets/**/*.css')
-//         .pipe(purgecss({
-//             content: ['*.html']
-//         }))
-//         .pipe(dest('assets/css'))
-// };
-// exports.purgecssTask = purgecssTask;
+function purgecssTask() {
+     return src('./assets/css/*.css')
+         .pipe(purgecss({
+             content: ['./index.html']
+         }))
+         .pipe(rename('./reducido.css'))
+         .pipe(dest('./assets/css'))
+};
+exports.purgecssTask = purgecssTask;
 //Watch task:SCSS and JS Files for changes
 function watchTask(){
     watch(files.scssPath, parallel(scssTask, browserSyncReload));
@@ -64,7 +65,7 @@ function browserSyncReload(done){
 };
 //Run command
 exports.default =series(
-    parallel (scssTask, jsTask,htmlTask),
+    parallel (scssTask, jsTask,htmlTask,purgecssTask),
     browserSyncServe,
     watchTask
 );
