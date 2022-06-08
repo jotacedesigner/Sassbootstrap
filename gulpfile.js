@@ -37,9 +37,11 @@ exports.jsTask = jsTask;
 function purgecssTask() {
      return src('./assets/css/*.css')
          .pipe(purgecss({
-             content: ['./index.html']
+             content: ['./**/index.html']
          }))
-         .pipe(rename('./reducido.css'))
+         .pipe(rename({
+             suffix:'.min'
+        }))
          .pipe(dest('./assets/css'))
 };
 exports.purgecssTask = purgecssTask;
@@ -65,7 +67,7 @@ function browserSyncReload(done){
 };
 //Run command
 exports.default =series(
-    parallel (scssTask, jsTask,htmlTask,purgecssTask),
-    browserSyncServe,
+    parallel (scssTask, jsTask,htmlTask),
+    browserSyncServe, purgecssTask,
     watchTask
 );
