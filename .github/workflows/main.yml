@@ -15,3 +15,14 @@ jobs:
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         server-dir: /domains/informatemigrante.org/public_html/templates/inforamat/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/scss/**
+          **/webfonts/**
+          **/language/**
+          **/html/**
+          gulpfile.js
+          package.json
+          offline.php
