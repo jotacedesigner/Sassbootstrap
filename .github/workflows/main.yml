@@ -11,6 +11,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        server: ftp.samkirkland.com
+        server: ftp.45.152.46.253
         username: myFtpUserName
         password: ${{ secrets.ftp_password }}
+        server-dir: /domains/informatemigrante.org/public_html/templates/inforamat/

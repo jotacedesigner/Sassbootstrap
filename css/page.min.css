@@ -1,0 +1,165 @@
+/*
+*   PixFort
+*   MegaPack
+*   20/10/2018
+*   Firas ODEH
+*/
+
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);*/
+/*@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);*/
+
+/* Base */
+
+    body { font-family: 'Open Sans',sans-serif !important;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+        -webkit-text-size-adjust: 100%;
+    }
+    a:hover, a:focus { text-decoration: none; }
+
+    /* Typography */
+    h1 { font-size: 48px;line-height: 77px; }
+    h2 { font-size: 36px;line-height: 58px; }
+    h3 { font-size: 28px;line-height: 45px; }
+    p { font-size: 14px;line-height: 22px; }
+
+    /*  Colors  */
+
+    /* line Buttons Color */
+
+    /* Padding */
+
+    /* Margin */
+
+
+    /* Negative margin */
+
+    /*  shadow  */
+
+    /* Shapes */
+    /* Buttons */
+
+    /*  featured boxes    */
+
+    /*  top border colors   */
+
+
+
+    /* Arrow Animation */
+    @-webkit-keyframes new_icon {
+        0% { top: 0px; }
+        100% { top: 15px;  }
+    }
+    @-moz-keyframes new_icon {
+        0% { top: 0px; }
+        100% { top: 15px;  }
+    }
+
+    /* Boxes */
+
+    /* Form */
+
+    /* float */
+
+    /* Backgrounds */
+
+    /* Misc */
+
+
+
+    /* original */
+
+    /* Startup */
+
+    /* Product */
+
+    /* Saas */
+
+    /* Real Esate */
+
+    /* Agency */
+
+    /* Showcase */
+
+    /* corporate */
+
+
+    /* Business */
+
+    /* SEO */
+
+    /* Marketing */
+
+    /* Shop */
+
+    /* Medical */
+
+    /* creative */
+
+    /* sport */
+
+    /* car_rental */
+
+    /* restaurant */
+
+    /* software */
+
+    /* elegant */
+
+    /* travel */
+
+    /* ebook */
+
+    /* construction */
+
+    /* app */
+
+    /* event */
+
+    /* company */
+
+    /* deal */
+
+    /* hotel */
+
+    /* modern */
+
+    /* studio */
+
+
+    /* coming soon */
+
+    /* popups */
+
+    /* Navbar */
+
+
+    /* highlight */
+
+    /* Accordions */
+
+    /* Slider */
+
+    /* Header */
+     .navbar-collapse.in { border-color: transparent;box-shadow: none; }
+    @media screen and (max-width: 768px) {
+        /* Mobile Misc */
+    }
+
+    @media screen and (min-width: 768px) {
+        /* Misc */
+
+      /*.dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{*/
+    }
+
+    /* Slider */
+
+    /* Modals */

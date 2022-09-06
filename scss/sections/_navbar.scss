@@ -1,0 +1,10 @@
+$navbar-padding-y: .8rem;
+.navbar {
+    padding-top: $navbar-padding-y;
+    padding-bottom: $navbar-padding-y;
+}
+//SOCIAL MEDIA
+.top-social{padding-top: 25px;}
+.top-social a{padding-right:2rem;}
+.top-social i{transition: 0.4s all; font-size: 1.2rem;}
+.top-social:hover i{transform: scale(1.1);}
