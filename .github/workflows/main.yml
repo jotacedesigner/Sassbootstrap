@@ -26,3 +26,6 @@ jobs:
           gulpfile.js
           package.json
           offline.php
+          package-lock.json
+          kit.html
+          inde.html
