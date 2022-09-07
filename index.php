@@ -31,7 +31,7 @@ $option   = $app->input->getCmd('option', '');
 $view     = $app->input->getCmd('view', '');
 $layout   = $app->input->getCmd('layout', '');
 $itemid   = $app->input->getCmd('Itemid', '');
-$class    = " educatic-" . $view;
+$class    = " infomat-" . $view;
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 
 // Preload CSS
@@ -119,6 +119,12 @@ div.catItemIntroText,.site-navbar{
 <jdoc:include type="head" /> 
 </head>
 <body>
+<?php
+echo $option;
+echo $layout;
+echo $view;
+echo $itemid;
+?>
 <header id="social-media" class="mb-3">
 	<div class="container">
 		<div class="row">
