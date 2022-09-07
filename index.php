@@ -36,7 +36,7 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 
 // Preload CSS
 $mediaVersion = $this->mediaVersion ? '?' . $this->mediaVersion : '';
-$this->addHeadLink($this->baseurl . '/templates/' . $this->template . '/css/main.css' . $mediaVersion, 'preload', 'rel',  array('as' => 'style', 'media' => 'all'));
+$this->addHeadLink($this->baseurl . '/templates/' . $this->template . '/css/main.min.css' . $mediaVersion, 'preload', 'rel',  array('as' => 'style', 'media' => 'all'));
 
 // Load CSS
 JHtml::_('stylesheet', 'main.min.css',  array('version' => 'auto', 'relative' => true));
@@ -144,7 +144,7 @@ div.catItemIntroText,.site-navbar{
             <div class="collapse navbar-collapse" id="navbarResponsive">
 				<jdoc:include type="modules" name="menu" style="none" />
             </div>
-			
+
 			<div class="col-6 d-inline-block d-lg-none ml-md-0 py-3" style="position: relative; top: 3px;">
             <a href="#" class="burger site-menu-toggle js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
               <span></span>
@@ -162,14 +162,14 @@ div.catItemIntroText,.site-navbar{
 <div class="icon-boxes position-relative">
 	<div class="container position-relative">
 	  <div class="row-base row justify-content-center">
-		<div class="card shadow me-3 p-3 bg-white col-md-4 col-lg-3">
-			<img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/Plan_Logo.png" width="140" alt="Logo Plan">
+		<div class="card shadow me-3 p-3 bg-white col-md-4" style="width: 15rem;">
+			<img class="card-img-top" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/Plan_Logo.png" width="140" alt="Logo Plan">
 		</div>
-		<div class="card me-3 shadow p-3 bg-white col-md-4 col-lg-3">	
-			<img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/LOGO-EDUCO.png" width="140" alt="Logo Educo">
+		<div class="card me-3 shadow p-3 bg-white col-md-4">	
+			<img class="card-img-top" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/LOGO-EDUCO.png" width="140" alt="Logo Educo">
 		</div>
-		<div class="card me-3 shadow p-3 bg-white col-md-4 col-lg-3">
-			<img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/caya.png" width="140" alt="Logo Cayaguanca">
+		<div class="card me-3 shadow p-3 bg-white col-md-4">
+			<img class="card-img-top" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/caya.png" width="140" alt="Logo Cayaguanca">
 		</div>
 	  </div>
 	</div>
