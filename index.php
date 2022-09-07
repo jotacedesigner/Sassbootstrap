@@ -165,7 +165,7 @@ div.catItemIntroText,.site-navbar{
           </div>
 	</div>
 </nav>
-<?php if($view==featured) {   ?>
+<?php if($view!==featured) {   ?>
 <!-- Content -->
 <section id="hero" class="hero position-relative">
 <div class="d-flex min-vh-100" lc-helper="background" style="background:url(<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/work.jpg)  center / cover no-repeat; background-color:#444; background-blend-mode: overlay;">
