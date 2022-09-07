@@ -135,17 +135,23 @@ div.catItemIntroText,.site-navbar{
 </header>	   
  <!-- Navigation--> 
 <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top py-3 shadow" id="mainNav">
-            <div class="container px-4 px-lg-5">
-				<div class="container">
-					<a class="navbar-brand" href="#page-top">
-					  <img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/camino-protegido.png" alt="" width="120" />
-					</a>
-				</div>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-					<jdoc:include type="modules" name="menu" style="none" />
+    <div class="container px-4 px-lg-5">
+			<div class="col-4">
+				<a class="navbar-brand" href="#page-top">
+					<img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/camino-protegido.png" alt="" width="120" />
+				</a>
+			</div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+				<jdoc:include type="modules" name="menu" style="none" />
             </div>
-        </nav>
+			
+			<div class="col-6 d-inline-block d-lg-none ml-md-0 py-3" style="position: relative; top: 3px;">
+            <a href="#" class="burger site-menu-toggle js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+              <span></span>
+            </a>
+          </div>
+	</div>
+</nav>
 
 <!-- Content -->
 <section id="hero" class="hero position-relative">
@@ -340,10 +346,13 @@ div.catItemIntroText,.site-navbar{
 <!-- Scripts -->
 
 <!-- <script src="js/jquery.min.js"></script> -->
-<script src="js/bootstrap.bundle.min.js"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<?php JHtml::script(Juri::base() . 'templates/'. $this->template . 'js/bootstrap.bundle.min.js', array('version' => 'auto', 'relative' => true), array('defer' => 'defer'));?>
+<?php JHtml::script(Juri::base() . 'templates/'. $this->template . 'js/main.js', array('version' => 'auto', 'relative' => true), array('defer' => 'defer'));?>
+<?php JHtml::script(Juri::base() . 'templates/'. $this->template . 'js/scripts.js', array('version' => 'auto', 'relative' => true), array('defer' => 'defer'))?>
+
 <!-- Icon Fontawesome -->
 <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
-<script src="js/main.js"></script>
-<script src="js/scripts.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
