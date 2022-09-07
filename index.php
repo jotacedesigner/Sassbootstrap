@@ -171,7 +171,7 @@ echo $itemid;
           </div>
 	</div>
 </nav>
-<?php if($itemid!==item101) {   ?>
+
 <!-- Content -->
 <section id="hero" class="hero position-relative">
 <div class="d-flex min-vh-100" lc-helper="background" style="background:url(<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/work.jpg)  center / cover no-repeat; background-color:#444; background-blend-mode: overlay;">
@@ -193,7 +193,7 @@ echo $itemid;
 	  </div>
 	</div>
    </div>
-<?php } ?>
+
    <!-- Servicios Informat -->
 <section id="specialization" class="servicios-informat section bg-primary">
 	<div class="container">
@@ -295,6 +295,7 @@ echo $itemid;
 	
 </div>
 </section>
+<?php if($itemid==item101) {   ?>
 <section id="contenido">
 	<div class="container">
 		<!-- Main -->
@@ -304,6 +305,7 @@ echo $itemid;
 		</row>
 	</div>
 </section>
+<?php } ?>
 <!-- Footer -->
 <footer class="footer">
 	<nav class="navbar navbar-expand-lg bg-light">
