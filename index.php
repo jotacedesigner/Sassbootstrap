@@ -171,7 +171,7 @@ echo $itemid;
           </div>
 	</div>
 </nav>
-<?php if($itemid==itemlist101) {   ?>
+<?php if($itemid!==item101) {   ?>
 <!-- Content -->
 <section id="hero" class="hero position-relative">
 <div class="d-flex min-vh-100" lc-helper="background" style="background:url(<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/work.jpg)  center / cover no-repeat; background-color:#444; background-blend-mode: overlay;">
