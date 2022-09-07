@@ -132,7 +132,16 @@ div.catItemIntroText,.site-navbar{
 			</div>
 		</div>
 	</div>
-</header>	   
+</header>
+<!-- ======= Mobile Menu ======= -->
+<div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+</div>
  <!-- Navigation--> 
 <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top py-3 shadow" id="mainNav">
     <div class="container px-4 px-lg-5">
@@ -141,8 +150,12 @@ div.catItemIntroText,.site-navbar{
 					<img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/camino-protegido.png" alt="" width="120" />
 				</a>
 			</div>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-				<jdoc:include type="modules" name="menu" style="none" />
+
+			<div class="col-8 col-md-8 d-none d-lg-block">
+           		 <nav id="educatic-main" class="site-navigation position-relative text-right" role="navigation">
+            <!-- <div class="collapse navbar-collapse" id="navbarResponsive"> -->
+					<jdoc:include type="modules" name="menu" style="none" />
+				</nav>
             </div>
 
 			<div class="col-6 d-inline-block d-lg-none ml-md-0 py-3" style="position: relative; top: 3px;">
@@ -152,7 +165,7 @@ div.catItemIntroText,.site-navbar{
           </div>
 	</div>
 </nav>
-
+<?php if($view==featured) {   ?>
 <!-- Content -->
 <section id="hero" class="hero position-relative">
 <div class="d-flex min-vh-100" lc-helper="background" style="background:url(<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/work.jpg)  center / cover no-repeat; background-color:#444; background-blend-mode: overlay;">
@@ -165,16 +178,17 @@ div.catItemIntroText,.site-navbar{
 		<div class="card shadow me-3 p-3 bg-white col-md-4" style="width: 15rem;">
 			<img class="card-img-top" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/Plan_Logo.png" width="140" alt="Logo Plan">
 		</div>
-		<div class="card me-3 shadow p-3 bg-white col-md-4">	
+		<div class="card me-3 shadow p-3 bg-white col-md-4" style="width: 15rem;">	
 			<img class="card-img-top" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/LOGO-EDUCO.png" width="140" alt="Logo Educo">
 		</div>
-		<div class="card me-3 shadow p-3 bg-white col-md-4">
+		<div class="card me-3 shadow p-3 bg-white col-md-4" style="width: 15rem;">
 			<img class="card-img-top" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/caya.png" width="140" alt="Logo Cayaguanca">
 		</div>
 	  </div>
 	</div>
    </div>
-<!-- Servicios Informat -->
+<?php } ?>
+   <!-- Servicios Informat -->
 <section id="specialization" class="servicios-informat section bg-primary">
 	<div class="container">
 	   <div class="section-body">
